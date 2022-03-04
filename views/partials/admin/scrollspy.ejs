@@ -1,0 +1,22 @@
+<div class="jumbotron">
+    <nav class="scrollspyNavbar">
+        <div class="nav nav-tabs" id="nav-tab" role="tablist">
+          <a class="nav-item nav-link active" id="nav-home-tab" data-toggle="tab" href="#nav-home" role="tab" aria-controls="nav-home" aria-selected="true">Issue/Withdraw Book</a>
+          <a class="nav-item nav-link" id="nav-profile-tab" data-toggle="tab" href="#nav-profile" role="tab" aria-controls="nav-profile" aria-selected="false">Add New Book</a>
+          <a class="nav-item nav-link" id="nav-contact-tab" data-toggle="tab" href="#nav-contact" role="tab" aria-controls="nav-contact" aria-selected="false">Add New Member</a>
+        </div>
+    </nav>
+    <div class="tab-content bg-light" id="nav-tabContent">
+        <!-- issue / withdraw books  -->
+        <%- include('./issue'); %>
+
+        <!-- add new book  -->
+        <%- include('./addbook'); %>
+
+        <!-- add new member  -->
+        <%- include('./addmember'); %>
+        
+    </div>
+</div>
+
+
