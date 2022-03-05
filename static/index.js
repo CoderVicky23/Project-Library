@@ -91,7 +91,7 @@ input.addEventListener('keyup', function() {
 
 document.getElementById('sortByBookName').addEventListener('click', function() {
     let items = document.querySelectorAll('.BookName');
-    console.log(items);   // object
+    console.log(items);   // object [ <div class="abc">Using C++]
     let textItems = [];
     for (i=0 ; i<items.length ; i++){
         textItems.push(items[i].textContent);
