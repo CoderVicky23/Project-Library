@@ -19,3 +19,22 @@
     position: sticky;
     top: 0px;
 }
+#userInfo{
+    max-width: 400px;
+}
+.userName{
+    display: flex;
+    justify-content: space-between;
+}
+.userRollno{
+    display: flex;
+    justify-content: space-between;
+}
+.issueWithdrawBtns{
+    display: flex;
+    justify-content: space-between;
+}
+.issuedBooksTable th,td{
+    padding-top: 10px;
+    padding-right: 40px;
+}

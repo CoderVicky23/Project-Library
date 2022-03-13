@@ -6,7 +6,7 @@ const bookSchema = mongoose.Schema({
     price : Number,
     quantity : Number,
     category : String,
-    bookid : String,
+    bookid : Number,
     avail : Number
 })
 

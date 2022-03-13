@@ -18,6 +18,20 @@ exports.getAllBooks = async (req, res) => {
     });
 }
 
+// fetching all books sorted
+exports.getSortedBooks = async (req, res) => {
+    await BooksModel.find().sort({name:1}).then( (data) => {
+        res.send(data);
+    })
+}
+
+// fetching all authors sorted
+exports.getSortedAuthors = async (req, res) => {
+    await BooksModel.find().sort({author:1}).then( (data) => {
+        res.send(data);
+    })
+}
+
 // admin verification
 exports.adminVerification = async (req, res)=>{
     await adminModel.find().then( (data) => {

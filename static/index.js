@@ -14,7 +14,7 @@ function getBooks (method, url) {
     })
 }
 
-getBooks('get', '/getAllBooks').then( (para) => {
+function DisplayBooks(para) {
     let data = JSON.parse(para);
     let block = document.querySelector('.books');
     let text = `<table class="bookHeading">
@@ -37,7 +37,9 @@ getBooks('get', '/getAllBooks').then( (para) => {
     }
     text += '</table>';
     block.innerHTML = text;
-})
+}
+
+getBooks('get', '/getAllBooks').then( DisplayBooks );
 
 document.getElementById('sign-in-btn').addEventListener('click', function(){
     let adminId = document.getElementById('exampleInputEmail1');
@@ -90,12 +92,23 @@ input.addEventListener('keyup', function() {
 })
 
 document.getElementById('sortByBookName').addEventListener('click', function() {
-    let items = document.querySelectorAll('.BookName');
-    console.log(items);   // object [ <div class="abc">Using C++]
-    let textItems = [];
-    for (i=0 ; i<items.length ; i++){
-        textItems.push(items[i].textContent);
-    }
-    textItems.sort();
-    console.log(textItems);
+    getBooks('get', '/getSortedBooks').then( DisplayBooks );
 })
+
+document.getElementById('sortByBookAuthor').addEventListener('click', function() {
+    getBooks('get', '/getSortedAuthors').then( DisplayBooks );
+})
+
+
+
+
+
+// dump code 
+// let items = document.querySelectorAll('.BookName');
+//     console.log(items);   // object [ <div class="abc">Using C++]
+//     let textItems = [];
+//     for (i=0 ; i<items.length ; i++){
+//         textItems.push(items[i].textContent);
+//     }
+//     textItems.sort();
+//     console.log(textItems);
